@@ -1,35 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hospital Website</title>
-</head>
-<style>
-    * {
-    margin: auto;
-    padding: auto;
-  }
-  body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #333;
-    background: linear-gradient(to right, #ffffff, #e3f2fd);
-    margin: 0;
-    padding: 0;
-  }
-  .top {
-    background-color: #2FA5EB;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: right;
-    font-size: 0.9em;
-  }
-  
-  .top a {
-    color: #fff;
-    margin: 0 10px;
-    text-decoration: none;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation and Information</title>
+    <style>
+      *{
+        margin: auto;
+        padding: auto;
+      }
+      body 
+      {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        color: #333;
+        background: linear-gradient(to right, #ffffff, #e3f2fd);
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Top section */
+      .top {
+        background-color: #0d47a1;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: right;
+        font-size: 0.9em;
+      }
+      
+      .top a {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+      
+      .top a:hover {
+        text-decoration: underline;
+      }
+      
+      /* Logo and navigation */
+      .logo {
+        text-align: center;
+        margin: 40px 0;
+      }
+      
+      .logo img {
+        max-width: 600px;
+        vertical-align: middle;
+      }
+      
+      .logo h1 {
+        display: inline-block;
+        font-size: 2.5em;
+        margin-left: 20px;
+        vertical-align: middle;
+        color: #0d47a1;
+        font-weight: bold;
+      }
+      
+      /* Middle section */
+      .middle {
+        text-align: center;
+        margin: 20px 0;
+      }
+      
+      .middle p {
+        font-size: 1.5em;
+        color: #0d47a1;
+      }
+      
+      /* Form section */
+      .form-section {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 40px 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      .form-section h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2.5em;
+        color: #333;
+      }
+      
+      .form-section form {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .form-section label {
+        margin-bottom: 10px;
+        font-size: 1.2em;
+        color: #0d47a1;
+      }
+      
+      .form-section input[type="text"], .form-section input[type="number"], .form-section select {
+        margin-bottom: 30px;
+        padding: 10px;
+        font-size: 1em;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      
+      .form-section .checkbox-group {
+        margin-bottom: 20px;
+      }
+      
+      .form-section .checkbox-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      .form-section button {
+        margin-top: 30px;
+        padding: 15px;
+        font-size: 1.2em;
+        background-color: #0d47a1;
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+      
+      .form-section button:hover {
+        background-color: #0a3781;
+      }
   
   .top a:hover {
     text-decoration: underline;
@@ -40,7 +137,7 @@
   }
   
   .logo img {
-    width: 250px; /* Adjust the size as needed */
+    width: 100px; /* Adjust the size as needed */
     height: auto;
     vertical-align: middle;
   }
@@ -63,7 +160,20 @@
     color: #2FA5EB;
     border-bottom: 2px solid #2FA5EB;
   }
-  
+  .small-button{
+    padding:20px;
+    font-size: 14px;
+    background-color: #007BFF; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 180px; /* Set button width */
+}
+
+.small-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
   .middle {
     width: 100%;
     border-bottom: 2px solid #f0f0f0;
@@ -80,10 +190,250 @@
     font-weight: bold;
     height: 300px;
     color: #fff;
-    opacity: 0.2;
+    opacity: 0.2;/* src/components/PatientInformation.css */
+
+/* General styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    background: linear-gradient(to right, #ffffff, #e3f2fd);
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Top section */
+  .top {
+    background-color: #0d47a1;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: right;
+    font-size: 0.9em;
+  }
+  
+  .top a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .top a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Logo and navigation */
+  .logo {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  .logo img {
+    max-width: 600px;
+    vertical-align: middle;
+  }
+  
+  .logo h1 {
+    display: inline-block;
+    font-size: 2.5em;
+    margin-left: 20px;
+    vertical-align: middle;
+    color: #0d47a1;
+    font-weight: bold;
+  }
+  
+  /* Middle section */
+  .middle {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .middle p {
+    font-size: 1.5em;
+    color: #0d47a1;
+  }
+  
+  /* Form section */
+  .form-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    color: #333;
+  }
+  
+  .form-section form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-section label {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #0d47a1;
+  }
+  
+  .form-section input[type="text"], .form-section input[type="number"], .form-section select {
+    margin-bottom: 30px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .form-section .checkbox-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-section .checkbox-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-section button {
+    margin-top: 30px;
+    padding: 15px;
+    font-size: 1.2em;
+    background-color: #0d47a1;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  
+  .form-section button:hover {
+    background-color: #0a3781;
+  }
     font-size: 50px;
     background-color: #000;
   }
+
+  /* src/components/PatientInformation.css */
+
+/* General styles */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  background: linear-gradient(to right, #ffffff, #e3f2fd);
+  margin: 0;
+  padding: 0;
+}
+
+/* Top section */
+.top {
+  background-color: #0d47a1;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: right;
+  font-size: 0.9em;
+}
+
+.top a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.top a:hover {
+  text-decoration: underline;
+}
+
+/* Logo and navigation */
+.logo {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.logo img {
+  max-width: 600px;
+  vertical-align: middle;
+}
+
+.logo h1 {
+  display: inline-block;
+  font-size: 2.5em;
+  margin-left: 20px;
+  vertical-align: middle;
+  color: #0d47a1;
+  font-weight: bold;
+}
+
+/* Middle section */
+.middle {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.middle p {
+  font-size: 1.5em;
+  color: #0d47a1;
+}
+
+/* Form section */
+.form-section {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  color: #333;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section label {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #0d47a1;
+}
+
+.form-section input[type="text"], .form-section input[type="number"], .form-section select {
+  margin-bottom: 30px;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-section .checkbox-group {
+  margin-bottom: 20px;
+}
+
+.form-section .checkbox-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-section button {
+  margin-top: 30px;
+  padding: 15px;
+  font-size: 1.2em;
+  background-color: #0d47a1;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.form-section button:hover {
+  background-color: #0a3781;
+}
   
   .bottom {
     width: 100%;
@@ -126,30 +476,7 @@
     text-align: center;
     font-family: calibri;
   }
-  
-  input[type="text"] {
-    padding: 12px;
-    width: 250px;
-  }
-  
-  select {
-    padding: 12px;
-    width: 250px;
-  }
-  
-  textarea {
-    padding: 50px;
-    width: 550px;
-  }
-  
-  button {
-    width: 550px;
-    padding: 10px;
-    color: #fff;
-    font-size: 20px;
-    background-color: #2FA5EB !important;
-  }
-  
+
   .nav_down {
     width: 100%;
     background-color: #2FA5EB !important;
@@ -164,13 +491,35 @@
     padding: 10px;
     text-align: left;
   }
-</style>
+  
+    </style>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Prediction</title>
+    <style>
+        /* Your existing styles... */
+        /* Add any additional styles needed for the new form */
+    </style>
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
 
   <!-- Top Section -->
   <div class="top">
     <div>
-      Welcome to Our Hospital | <a href="#">Start</a>
+      Welcome to Our Hospital | <a href="Form.html">Start</a>
     </div>
   </div>
 
@@ -180,7 +529,7 @@
       <table>
         <tbody>
           <tr>
-            <td><img src="H_Logo.png" alt="Hospital Logo" /></td>
+            <td><img src="H_Logo.png" alt="Hospital Logo"></td>
             <td><a href="index.html">Home</a></td>
             <td><a href="services.html">Services</a></td>
             <td><a href="Doctors.html">Doctors</a></td>
@@ -194,8 +543,8 @@
   <!-- Middle Section -->
   <div class="middle" style="background-image: url('Home_Back.jpg');">
     <p>
-      <br /><br />
-      Health Care Services <br />
+      <br><br>
+      Health Care Services<br>
       <span style="font-size: 5px;">We Care About Your Health</span>
     </p>
   </div>
@@ -237,4 +586,9 @@
   </div>
 
 </body>
+</html>
+
+</body>
+</html>
+
 </html>

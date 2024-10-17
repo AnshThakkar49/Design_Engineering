@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Report</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Use gradient background similar to index1.html */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(to right, #ffffff, #e3f2fd);
+            margin: 20px;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #0d47a1; /* Dark blue for headings */
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #0d47a1;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .button {
+            margin-top: 15px;
+            padding: 15px;
+            font-size: 1.2em;
+            background-color: #0d47a1;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #0a3781; /* Darker blue on hover */
+        }
+
+        .report {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        /* Styling for the report text */
+        p {
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        strong {
+            color: #0d47a1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Disease Report</h1>
+        <!-- Assuming form is already created and data is given -->
+        <div id="report" class="report">
+            <h2>Generated Report</h2>
+            <p><strong>Disease ID:</strong> <span id="reportDiseaseId"></span></p>
+            <p><strong>Disease Name:</strong> <span id="reportDiseaseName"></span></p>
+            <p><strong>Risk Factor:</strong> <span id="reportRiskFactor"></span></p>
+            <p><strong>Doctor's Name:</strong> <span id="reportDoctorName"></span></p>
+            <p><strong>Symptoms:</strong> <span id="reportSymptoms"></span></p>
+            
+        </div>
+    </div>
+
+    <script>
+        // Function to generate report
+        function generateReport(diseaseId, diseaseName, riskFactor, doctorName, symptoms) {
+            // Populate report fields with provided data
+            document.getElementById("reportDiseaseId").textContent = diseaseId;
+            document.getElementById("reportDiseaseName").textContent = diseaseName;
+            document.getElementById("reportRiskFactor").textContent = riskFactor;
+            document.getElementById("reportDoctorName").textContent = doctorName;
+            document.getElementById("reportSymptoms").textContent = symptoms;
+
+            // Display the report
+            document.getElementById("report").style.display = "block";
+        }
+
+        // Example of generating a report with existing form data
+        var diseaseId = "D001";
+        var diseaseName = "Hypertension";
+        var riskFactor = "High Blood Pressure";
+        var doctorName = "Dr. Smith";
+        var symptoms = "Headache, dizziness, fatigue";
+
+        // Call the generateReport function with the data
+        generateReport(diseaseId, diseaseName, riskFactor, doctorName, symptoms);
+    </script>
+
+</body>
+</html>

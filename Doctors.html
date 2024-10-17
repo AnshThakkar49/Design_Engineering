@@ -1,254 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Doctors Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors | MediCare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General styling */
+        * {
+            margin: auto;
+            padding: 0;
+          }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #3498db;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        /* Doctors Section */
+        .doctors-section {
+            padding: 5rem 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        .doctors-section h2 {
+            font-size: 2.5rem;
+            color: #0d47a1;
+            margin-bottom: 2rem;
+        }
+        .doctors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .doctor {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        .doctor:hover {
+            transform: translateY(-5px);
+        }
+        .doctor img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 4px solid #3498db;
+        }
+        .doctor h3 {
+            font-size: 1.5rem;
+            color: #3498db;
+        }
+        .doctor p {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+    </style>
 </head>
-<style>
-    /* General styles */
-* {
-  margin: auto;
-  padding: auto;
-}
-body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  color: #333;
-  background: linear-gradient(to right, #ffffff, #e3f2fd);
-  margin: 0;
-  padding: 0;
-}
-
-/* Top section */
-.top {
-  background-color: #2FA5EB;
-  color: #fff;
-  padding: 10px 20px;
-  text-align: right;
-  font-size: 0.9em;
-}
-
-.top a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-.top a:hover {
-  text-decoration: underline;
-}
-
-.logo {
-  text-align: center;
-  padding: 20px;
-}
-
-.logo img {
-  width: 250px; /* Adjust the size as needed */
-  height: auto;
-  vertical-align: middle;
-}
-
-.logo table {
-  margin: 0 auto;
-}
-
-.logo table td {
-  padding: 10px;
-}
-
-.logo a {
-  color: #0d47a1;
-  text-decoration: none;
-  font-size: 1.2em;
-}
-
-.logo a:hover {
-  color: #2FA5EB;
-  border-bottom: 2px solid #2FA5EB;
-}
-
-/* Middle section */
-.middle {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.middle p {
-  font-size: 1.5em;
-  color: #0d47a1;
-}
-
-/* Doctors section */
-.doctors-section {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 40px 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-.doctors-section h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2.5em;
-  color: #333;
-}
-
-.doctors-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.doctor {
-  text-align: center;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.doctor:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-.doctor img {
-  border-radius: 50%;
-  margin-bottom: 10px;
-  border: 5px solid #0d47a1;
-}
-
-.doctor h3 {
-  margin: 10px 0 5px;
-  color: #0d47a1;
-  font-size: 1.5em;
-}
-
-.doctor p {
-  margin: 5px 0;
-  color: #555;
-}
-
-/* Bottom section */
-.bottom_up {
-  background-color: #2FA5EB;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.bottom_up table {
-  width: 100%;
-  table-layout: fixed;
-}
-
-.bottom_up table td {
-  padding: 10px;
-  color: #f4f4f4;
-}
-.bottom {
-  width: 100%;
-  border-bottom: 2px solid #f0f0f0;
-}
-
-.bottom div {
-  width: 1200px;
-  color: #fff;
-  font-family: calibri;
-  text-align: right;
-}
-
-.bottom div table {
-  padding-top: 30px;
-  width: 1100px;
-  text-align: center;
-  color: gray;
-  font-size: 20px;
-}
-
-.nav_down {
-  width: 100%;
-  background-color: #2FA5EB !important;
-  border-bottom: 2px solid #f0f0f0;
-}
-
-.nav_down div {
-  width: 1200px;
-  color: #fff;
-  background-color: #000;
-  font-family: calibri;
-  padding: 10px;
-  text-align: left;
-}
-</style>
 <body>
 
-  <!-- Top Section -->
-  <div class="top">
-    <div>
-      Welcome to Our Hospital | <a href="#">Start</a>
-    </div>
-  </div>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">MediCare</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="Doctors.html">Doctors</a></li>
+                    <li><a href="ContactUs.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Logo Section -->
-  <div class="logo">
-    <div>
-      <table>
-        <tbody>
-          <tr>
-            <td><img src="H_Logo.png" alt="Hospital Logo"></td>
-            <td><a href="index.html">Home</a></td>
-            <td><a href="services.html">Services</a></td>
-            <td><a href="Doctors.html">Doctors</a></td>
-            <td><a href="ContactUs.html">Contact Us</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+    <!-- Doctors Section -->
+    <section class="doctors-section">
+        <div class="container">
+            <h2>Our Doctors</h2>
+            <div class="doctors-grid">
+                <div class="doctor">
+                    <img src="d1.jpg" alt="Doctor 1">
+                    <h3>Dr. John Doe</h3>
+                    <p>Specialty: Endocrinology</p>
+                    <p>Experience: 15 years</p>
+                    <p>Education: MD, PhD</p>
+                </div>
+                <div class="doctor">
+                    <img src="d2.jpg" alt="Doctor 2">
+                    <h3>Dr. Jane Smith</h3>
+                    <p>Specialty: Medicine</p>
+                    <p>Experience: 12 years</p>
+                    <p>Education: MD, MSc</p>
+                </div>
+                <div class="doctor">
+                    <img src="d3.jpg" alt="Doctor 3">
+                    <h3>Dr. Emily Johnson</h3>
+                    <p>Specialty: General Practice</p>
+                    <p>Experience: 10 years</p>
+                    <p>Education: MD, MPH</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Doctors Section -->
-  <div class="doctors-section">
-    <h2>Our Doctors</h2>
-
-    <div class="doctors-grid">
-      <div class="doctor">
-        <img src="d1.jpg" alt="Doctor 1" width="150" height="150">
-        <h3>Dr. John Doe</h3>
-        <p>Specialty: Endocrinology</p>
-        <p>Experience: 15 years</p>
-        <p>Education: MD, PhD</p>
-      </div>
-
-      <div class="doctor">
-        <img src="d2.jpg" alt="Doctor 2" width="150" height="150">
-        <h3>Dr. Jane Smith</h3>
-        <p>Specialty: Medicine</p>
-        <p>Experience: 12 years</p>
-        <p>Education: MD, MSc</p>
-      </div>
-
-      <div class="doctor">
-        <img src="d3.jpg" alt="Doctor 3" width="150" height="150">
-        <h3>Dr. Emily Johnson</h3>
-        <p>Specialty: General Practice</p>
-        <p>Experience: 10 years</p>
-        <p>Education: MD, MPH</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer Section -->
-  <div class="nav_down">
-    <div>
-      &copy; 2024 Hospital Name. All rights reserved.
-    </div>
-  </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 MediCare. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        .button {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .report {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Disease Report</h1>
+
+        <!-- Assuming form is already created and data is given -->
+        <div id="report" class="report">
+            <h2>Generated Report</h2>
+            <p><strong>Disease ID:</strong> <span id="reportDiseaseId"></span></p>
+            <p><strong>Disease Name:</strong> <span id="reportDiseaseName"></span></p>
+            <p><strong>Risk Factor:</strong> <span id="reportRiskFactor"></span></p>
+            <p><strong>Doctor's Name:</strong> <span id="reportDoctorName"></span></p>
+            <p><strong>Symptoms:</strong> <span id="reportSymptoms"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Function to generate report
+        function generateReport(diseaseId, diseaseName, riskFactor, doctorName, symptoms) {
+            // Populate report fields with provided data
+            document.getElementById("reportDiseaseId").textContent = diseaseId;
+            document.getElementById("reportDiseaseName").textContent = diseaseName;
+            document.getElementById("reportRiskFactor").textContent = riskFactor;
+            document.getElementById("reportDoctorName").textContent = doctorName;
+            document.getElementById("reportSymptoms").textContent = symptoms;
+
+            // Display the report
+            document.getElementById("report").style.display = "block";
+        }
+
+        // Example of generating a report with existing form data
+        // Assuming these values are already gathered from a form submission
+        var diseaseId = "D001";
+        var diseaseName = "Hypertension";
+        var riskFactor = "High Blood Pressure";
+        var doctorName = "Dr. Smith";
+        var symptoms = "Headache, dizziness, fatigue";
+
+        // Call the generateReport function with the data
+        generateReport(diseaseId, diseaseName, riskFactor, doctorName, symptoms);
+    </script>
+
+</body>
+</html>

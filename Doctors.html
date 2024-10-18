@@ -8,9 +8,10 @@
     <style>
         /* General styling */
         * {
-            margin: auto;
+            margin: 0;
             padding: 0;
-          }
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Poppins', sans-serif;
             color: #333;
@@ -30,6 +31,7 @@
             position: fixed;
             width: 100%;
             z-index: 1000;
+            top: 0;
         }
         nav {
             display: flex;
@@ -59,6 +61,24 @@
             color: #3498db;
         }
         
+        /* Auth Buttons */
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        .auth-buttons .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .auth-buttons .btn:hover {
+            background-color: #2980b9;
+        }
+
         /* Doctors Section */
         .doctors-section {
             padding: 5rem 0;
@@ -127,6 +147,10 @@
                     <li><a href="Doctors.html">Doctors</a></li>
                     <li><a href="ContactUs.html">Contact Us</a></li>
                 </ul>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn">Login</a>
+                    <a href="signup.html" class="btn">Signup</a>
+                </div>
             </nav>
         </div>
     </header>

@@ -49,6 +49,7 @@
             list-style: none;
         }
         .nav-links li {
+            align-items: start;
             margin-left: 2rem;
         }
         .nav-links a {
@@ -183,13 +184,7 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">MediCare</div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="Doctors.html">Doctors</a></li>
-                    <li><a href="ContactUs.html">Contact Us</a></li>
-                </ul>
+                <a href="index.html" class="logo">MediCare</a>
             </nav>
         </div>
     </header>
@@ -248,7 +243,10 @@
             </div>
 
             <!-- Submit Button -->
-            <button type="submit">Submit</button>
+            <div class="auth-buttons">
+                <a href="report.html" class="btn">Submit</a>
+                <a href="index.html" class="btn">Home</a>
+            </div>
         </form>
     </div>
 
